@@ -1,7 +1,10 @@
 package ch04;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 public class ClassTest {
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
         Class c1 = Class.forName("ch04.Person");
 
         Person person = (Person)c1.newInstance();
@@ -15,7 +18,8 @@ public class ClassTest {
         Class[] parameterType = {String.class};
         Constuctor cons = c2.getConstructor(parameterType);
 
-        Object[] initargs =
-
+        Object[] initargs = {"Kim"};
+        Person kimPerson = (Person)cons.newInstance(initargs);
+        System.out.println(kimPerson);
     }
 }
