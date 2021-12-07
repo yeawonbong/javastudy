@@ -1,12 +1,12 @@
 package ch01;
 //인스턴스 내부 클래스
 
-class OutClass {
+class OutClass2 {
         private int num = 10;
         private static int sNum = 20;
         private InClass inClass;
 
-        public OutClass() {  // outClass 생성하면서 inClass 생성
+        public OutClass2() {  // outClass 생성하면서 inClass 생성
             inClass = new InClass();
         }
 
@@ -28,7 +28,7 @@ class OutClass {
 
 public class InnerTest {
     public static void main(String[] args) {
-        OutClass outClass = new OutClass();
+        OutClass2 outClass = new OutClass2();
         outClass.usingClass();
 
         /*내부 클래스가 private이 아니라면 밑에와 같이 생성은 가능하다. 하지만 보통 private로 내부클래스를 선언.
